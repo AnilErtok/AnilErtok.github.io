@@ -314,25 +314,27 @@ footer {
 /* -------------------- */
 /* MOBİL UYUM */
 @media (max-width: 768px) {
-    .nav-container {
+       .nav-container {
         flex-direction: column; /* logo altına menü */
         align-items: flex-start;
         padding: 15px 20px;
+        height: auto; /* içerik kadar yüksek olacak */
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.85); /* sayfayı tamamen kaplamasın, opaklığı artırdım */
+        position: fixed; /* hala üstte sabit kalsın */
     }
 
     .logo span {
         font-size: 18px; /* mobilde daha okunaklı */
     }
-
-    nav ul {
+  nav ul {
         flex-direction: column;
         width: 100%;
         gap: 15px;
         margin-top: 10px;
     }
-
-    nav a {
-        font-size: 38px;
+ nav a {
+        font-size: 20px; /* mobilde okunaklı boyut */
     }
 
     .hero-content h1 {
