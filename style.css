@@ -21,9 +21,9 @@ body {
     position: relative;
     color: white;
     display: flex;
-   
-
-    padding-left: 0%; /* sol boşluk ekledim */
+    justify-content: flex-start; /* sol tarafa yasla ama içerik wrapper ile boşluk olacak */
+    align-items: center;
+    padding-left: 8%; /* sol boşluk ekleyerek sayfa biraz sağa kaydırıldı */
 }
 
 .hero::after {
@@ -31,17 +31,18 @@ body {
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.55);
+    z-index: 1;
 }
 
+/* Hero content wrapper */
 .hero-content-wrapper {
     position: relative;
     display: flex;
     align-items: center;
-    gap: 40px; /* Fotoğraf ve metin arası boşluk */
+    gap: 40px; /* fotoğraf ve metin arası boşluk */
     z-index: 2; /* overlay’in üzerinde görünmesi için */
     max-width: 1200px;
     width: 90%;
-    margin-left: 8%; /* sol boşluk ekleyerek sağa kaydırma */
 }
 
 /* Fotoğraf */
@@ -60,7 +61,7 @@ body {
 /* Metin */
 .hero-text {
     text-align: left;
-    white-space: nowrap; /* tek satır */
+    white-space: nowrap; /* yazı tek satırda kalır */
 }
 
 .hero-text h1 {
@@ -81,21 +82,40 @@ body {
     animation-delay: 0.2s;
 }
 
-/* Animasyon */
+/* ANİMASYON */
 @keyframes fadeInUp {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Mobil uyumlu */
-@media (max-width: 768px) {
+/* Mobil & Tablet Uyumlu */
+@media (max-width: 1024px) { /* tabletler için */
     .hero {
-        justify-content: center;
+        padding-left: 5%;
+        justify-content: flex-start;
+    }
+    .hero-photo img {
+        height: 55vh;
+        width: auto;
+    }
+    .hero-text h1 {
+        font-size: 45px;
+        white-space: normal; /* satır kırmaya izin ver */
+    }
+    .hero-text p {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) { /* mobil için */
+    .hero {
         padding-left: 0;
+        justify-content: center;
     }
     .hero-content-wrapper {
         flex-direction: column;
         gap: 20px;
         text-align: center;
+        width: 90%;
     }
     .hero-photo img {
         height: 50vh;
@@ -103,7 +123,7 @@ body {
     }
     .hero-text h1 {
         font-size: 36px;
-        white-space: normal; /* mobilde satır kırılmasına izin ver */
+        white-space: normal; /* mobilde satır kırabilir */
     }
     .hero-text p {
         font-size: 16px;
