@@ -310,3 +310,80 @@ footer {
 }
 
 
+
+
+/* Sergi Afişi */
+.sergi-afis {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: 40px auto; /* üst-alt boşluk ekledim */
+    border-radius: 12px;
+    overflow: hidden;
+    height: auto; /* otomatik yükseklik */
+}
+
+
+.sergi-afis img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* orantıyı koru, taşmasın */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.sergi-afis img:hover {
+    transform: scale(1.03);
+}
+
+.afis-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.55); /* biraz daha belirgin */
+    color: #fff;
+    padding: 25px 30px;
+}
+
+.afis-overlay h3 {
+    font-size: 32px; /* biraz büyütüldü */
+    margin-bottom: 10px;
+}
+
+.afis-overlay p {
+    font-size: 18px;
+}
+
+.afis-aciklama {
+    max-width: 700px;
+    margin: 20px auto 40px auto;
+    text-align: center;
+}
+
+.afis-aciklama h3 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.afis-aciklama p {
+    font-size: 18px;
+    color: #333;
+}
+
+
+
+/* Mobil uyumlu */
+@media (max-width: 768px) {
+    .sergi-afis {
+        max-width: 90%;
+        height: auto;
+    }
+    .afis-overlay h3 {
+        font-size: 22px;
+    }
+    .afis-overlay p {
+        font-size: 14px;
+    }
+}
+
