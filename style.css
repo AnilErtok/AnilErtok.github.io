@@ -21,8 +21,9 @@ body {
     position: relative;
     color: white;
     display: flex;
-    justify-content: center;
-    align-items: center;
+   
+
+    padding-left: 0%; /* sol boşluk ekledim */
 }
 
 .hero::after {
@@ -32,15 +33,84 @@ body {
     background: rgba(0, 0, 0, 0.55);
 }
 
-.hero-content h1, .hero-content p {
+.hero-content-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 40px; /* Fotoğraf ve metin arası boşluk */
+    z-index: 2; /* overlay’in üzerinde görünmesi için */
+    max-width: 1200px;
+    width: 90%;
+    margin-left: 8%; /* sol boşluk ekleyerek sağa kaydırma */
+}
+
+/* Fotoğraf */
+.hero-photo img {
+    height: 70vh; /* ekranın %70’i kadar yükseklik */
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+}
+
+.hero-photo img:hover {
+    transform: scale(1.02);
+}
+
+/* Metin */
+.hero-text {
+    text-align: left;
+    white-space: nowrap; /* tek satır */
+}
+
+.hero-text h1 {
+    font-size: 55px;
+    font-weight: 700;
+    margin-bottom: 15px;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.8s forwards;
+    white-space: nowrap; /* satır kırılmasını önler */
 }
 
+.hero-text p {
+    font-size: 22px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards;
+    animation-delay: 0.2s;
+}
+
+/* Animasyon */
 @keyframes fadeInUp {
     to { opacity: 1; transform: translateY(0); }
 }
+
+/* Mobil uyumlu */
+@media (max-width: 768px) {
+    .hero {
+        justify-content: center;
+        padding-left: 0;
+    }
+    .hero-content-wrapper {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    .hero-photo img {
+        height: 50vh;
+        width: 60%;
+    }
+    .hero-text h1 {
+        font-size: 36px;
+        white-space: normal; /* mobilde satır kırılmasına izin ver */
+    }
+    .hero-text p {
+        font-size: 16px;
+    }
+}
+
+
 
 /* NAVBAR */
 .nav-container {
