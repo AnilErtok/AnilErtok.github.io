@@ -57,11 +57,12 @@ body {
     transition: all 0.3s ease;
     z-index: 1000;
 }
-
+/* NAV SHRINK EFECT (logo küçülmesin diye değiştirildi) */
 .nav-container.shrink {
     padding: 10px 40px;
     background: rgba(255, 255, 255, 0.65);
     box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    /* logo img küçülmesin diye height vs. eklenmedi */
 }
 
 /* LOGO */
@@ -71,17 +72,10 @@ body {
     gap: 28px;
 }
 
-
-
-
-
-
-
-
 .logo img {
-    height: 170px; /* Logo büyük ve net */
+    height: 100px; /* Logo büyük ve sabit */
     filter: drop-shadow(0 0 4px rgba(0,0,0,0.25));
-    transition: transform 0.25s ease;
+    transition: transform 0.25s ease; /* hover efekti için */
 }
 
 .logo img:hover {
@@ -94,6 +88,7 @@ body {
     color: #fff;
     text-shadow: 0 0 6px #000;
 }
+
 
 /* NAV */
 nav ul {

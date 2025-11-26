@@ -1,4 +1,4 @@
-// Smooth Scroll
+// -------------------- SMOOTH SCROLL --------------------
 document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', e => {
         e.preventDefault();
@@ -9,10 +9,10 @@ document.querySelectorAll('nav a').forEach(link => {
     });
 });
 
-// Aktif menü
+// -------------------- AKTİF MENÜ --------------------
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll("section");
-    const scrollPos = window.scrollY + 150;
+    const scrollPos = window.scrollY + 150; // 150px offset
 
     sections.forEach(sec => {
         if (scrollPos > sec.offsetTop && scrollPos < sec.offsetTop + sec.offsetHeight) {
@@ -23,8 +23,8 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// NAVBAR SHRINK (küçülme efekti)
-window.addEventListener("scroll", function () {
+// -------------------- NAVBAR SHRINK --------------------
+window.addEventListener("scroll", () => {
     const nav = document.querySelector(".nav-container");
     if (window.scrollY > 80) {
         nav.classList.add("shrink");
@@ -33,9 +33,11 @@ window.addEventListener("scroll", function () {
     }
 });
 
+// -------------------- LIGHTBOX GALERİ --------------------
+// Lightbox galerisi
 const galleryImages = document.querySelectorAll('.gallery-item img');
 const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.querySelector('.lightbox-img');
+const lightboxImg = document.getElementById('lightbox-img');
 const closeBtn = document.querySelector('.lightbox .close');
 
 galleryImages.forEach(img => {
