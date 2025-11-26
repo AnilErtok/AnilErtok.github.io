@@ -41,10 +41,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     backdrop-filter: blur(10px);
     background: rgba(255, 255, 255, 0.25);
-
     transition: all 0.3s ease;
     z-index: 1000;
 }
@@ -55,6 +53,7 @@ body {
     box-shadow: 0 2px 10px rgba(0,0,0,0.15);
 }
 
+/* LOGO */
 .logo {
     display: flex;
     align-items: center;
@@ -62,8 +61,13 @@ body {
 }
 
 .logo img {
-    height: 50px;
-    filter: drop-shadow(0 0 4px black);
+    height: 70px; /* logo artık büyük ve net */
+    filter: drop-shadow(0 0 4px rgba(0,0,0,0.25));
+    transition: transform 0.25s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
 }
 
 .logo span {
@@ -73,6 +77,7 @@ body {
     text-shadow: 0 0 6px #000;
 }
 
+/* NAV */
 nav ul {
     display: flex;
     list-style: none;
@@ -84,11 +89,40 @@ nav a {
     font-weight: 500;
     font-size: 17px;
     text-decoration: none;
-    transition: 0.25s;
+    position: relative;
+    padding: 8px 14px;
+    transition: color 0.25s ease;
 }
 
+/* HOVER & AKTİF MENÜ */
 nav a:hover {
-    color: #00c3ff;
+    color: #00d9ff;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #00d9ff, #00ffa5);
+    transition: all 0.35s ease;
+    border-radius: 3px;
+}
+
+nav a:hover::after {
+    width: 70%;
+    left: 15%;
+}
+
+nav a.active {
+    color: #00ffa5;
+}
+
+nav a.active::after {
+    width: 80%;
+    left: 10%;
 }
 
 /* HERO TEXT */
@@ -173,5 +207,3 @@ footer {
     color: #aaa;
     margin-top: 50px;
 }
-
-/* NAVBAR SHRINK SCRIPT */
