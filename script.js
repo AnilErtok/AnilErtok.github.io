@@ -32,3 +32,27 @@ window.addEventListener("scroll", function () {
         nav.classList.remove("shrink");
     }
 });
+
+const galleryImages = document.querySelectorAll('.gallery-item img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.querySelector('.lightbox-img');
+const closeBtn = document.querySelector('.lightbox .close');
+
+galleryImages.forEach(img => {
+    img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+    });
+});
+
+// Kapatma butonu
+closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+});
+
+// Boş alana tıklayınca kapanma
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+    }
+});
