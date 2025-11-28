@@ -232,6 +232,37 @@ p {
     box-shadow: 0 12px 35px rgba(0,0,0,0.2);
 }
 
+
+
+#iletisim {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 18px;
+}
+
+.contact-container a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-container a:hover {
+    text-decoration: underline;
+}
+
+.social-links {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
 /* -------------------- */
 /* FOOTER */
 footer {
@@ -241,6 +272,8 @@ footer {
     color: #aaa;
     margin-top: 50px;
 }
+
+
 
 /* -------------------- */
 /* GALERİ */
