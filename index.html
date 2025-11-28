@@ -147,38 +147,69 @@
     </div>
 
     <div class="gallery">
-        <!-- 30 resim -->
-        <div class="gallery-item"><img src="img/sergi1.jpeg" alt="Sergi 1"></div>
-        <div class="gallery-item"><img src="img/sergi2.jpeg" alt="Sergi 2"></div>
-        <div class="gallery-item"><img src="img/sergi3.jpeg" alt="Sergi 3"></div>
-        <div class="gallery-item"><img src="img/sergi4.jpeg" alt="Sergi 4"></div>
-        <div class="gallery-item"><img src="img/sergi5.jpeg" alt="Sergi 5"></div>
-        <div class="gallery-item"><img src="img/sergi6.jpg" alt="Sergi 6"></div>
-        <div class="gallery-item"><img src="img/sergi7.jpeg" alt="Sergi 7"></div>
-        <div class="gallery-item"><img src="img/sergi8.jpeg" alt="Sergi 8"></div>
-        <div class="gallery-item"><img src="img/sergi9.jpeg" alt="Sergi 9"></div>
-        <div class="gallery-item"><img src="img/sergi10.jpeg" alt="Sergi 10"></div>
-        <div class="gallery-item"><img src="img/sergi11.jpeg" alt="Sergi 11"></div>
-        <div class="gallery-item"><img src="img/sergi12.jpeg" alt="Sergi 12"></div>
-        <div class="gallery-item"><img src="img/sergi13.jpeg" alt="Sergi 13"></div>
-        <div class="gallery-item"><img src="img/sergi14.jpeg" alt="Sergi 14"></div>
-        <div class="gallery-item"><img src="img/sergi15.jpeg" alt="Sergi 15"></div>
-        <div class="gallery-item"><img src="img/sergi16.jpeg" alt="Sergi 16"></div>
-        <div class="gallery-item"><img src="img/sergi17.jpeg" alt="Sergi 17"></div>
-        <div class="gallery-item"><img src="img/sergi18.jpeg" alt="Sergi 18"></div>
-        <div class="gallery-item"><img src="img/sergi19.jpeg" alt="Sergi 19"></div>
-        <div class="gallery-item"><img src="img/sergi20.jpeg" alt="Sergi 20"></div>
-        <div class="gallery-item"><img src="img/sergi21.jpeg" alt="Sergi 21"></div>
-        <div class="gallery-item"><img src="img/sergi22.jpeg" alt="Sergi 22"></div>
-        <div class="gallery-item"><img src="img/sergi23.jpeg" alt="Sergi 23"></div>
-        <div class="gallery-item"><img src="img/sergi24.jpeg" alt="Sergi 24"></div>
-        <div class="gallery-item"><img src="img/sergi25.jpeg" alt="Sergi 25"></div>
-        <div class="gallery-item"><img src="img/sergi26.jpeg" alt="Sergi 26"></div>
-        <div class="gallery-item"><img src="img/sergi27.jpeg" alt="Sergi 27"></div>
-        <div class="gallery-item"><img src="img/sergi28.jpeg" alt="Sergi 28"></div>
-        <div class="gallery-item"><img src="img/sergi29.jpeg" alt="Sergi 29"></div>
-        <div class="gallery-item"><img src="img/sergi30.jpeg" alt="Sergi 30"></div>
-    </div>
+    <div class="gallery-item"><img src="img/sergi1.jpeg"></div>
+    <div class="gallery-item"><img src="img/sergi2.jpeg"></div>
+    <div class="gallery-item"><img src="img/sergi3.jpeg"></div>
+    <div class="gallery-item"><img src="img/sergi4.jpeg"></div>
+    <div class="gallery-item"><img src="img/sergi5.jpeg"></div>
+    <div class="gallery-item"><img src="img/sergi6.jpg"></div>
+    <div class="gallery-item"><img src="img/sergi7.jpeg"></div>
+    <div class="gallery-item"><img src="img/sergi8.jpeg"></div>
+    <div class="gallery-item"><img src="img/sergi9.jpeg"></div>
+    <div class="gallery-item"><img src="img/sergi10.jpeg"></div>
+    <div class="gallery-item"><img src="img/sergi11.jpeg"></div>
+    <div class="gallery-item"><img src="img/sergi12.jpeg"></div>
+    <div class="gallery-item"><img src="img/sergi13.jpeg"></div>
+    <div class="gallery-item"><img src="img/sergi14.jpeg"></div>
+    <div class="gallery-item"><img src="img/sergi15.jpeg"></div>
+    <div class="gallery-item"><img src="img/sergi16.jpeg"></div>
+    <div class="gallery-item"><img src="img/sergi17.jpeg"></div>
+    <div class="gallery-item"><img src="img/sergi18.jpeg"></div>
+    <div class="gallery-item"><img src="img/sergi19.jpeg"></div>
+    <div class="gallery-item"><img src="img/sergi20.jpeg"></div>
+    <div class="gallery-item"><img src="img/sergi21.jpeg"></div>
+    <div class="gallery-item"><img src="img/sergi22.jpeg"></div>
+    <div class="gallery-item"><img src="img/sergi23.jpeg"></div>
+    <div class="gallery-item"><img src="img/sergi24.jpeg"></div>
+    <div class="gallery-item"><img src="img/sergi25.jpeg"></div>
+    <div class="gallery-item"><img src="img/sergi26.jpeg"></div>
+    <div class="gallery-item"><img src="img/sergi27.jpeg"></div>
+    <div class="gallery-item"><img src="img/sergi28.jpeg"></div>
+    <div class="gallery-item"><img src="img/sergi29.jpeg"></div>
+    <div class="gallery-item"><img src="img/sergi30.jpeg"></div>
+</div>
+
+<button id="loadMoreBtn" class="load-more">Daha Fazla Sergi Çalışması Göster</button>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    let items = document.querySelectorAll(".gallery-item");
+    let btn = document.getElementById("loadMoreBtn");
+
+    let showCount = 6;  // her adımda kaç resim açılsın
+    let current = 0;    // başlangıç index
+
+    function showImages() {
+        for (let i = current; i < current + showCount; i++) {
+            if (items[i]) {
+                items[i].style.display = "block";
+            }
+        }
+
+        current += showCount;
+
+        if (current >= items.length) {
+            btn.style.display = "none";
+        }
+    }
+
+    showImages(); // sayfa açıldığında ilk 6 resmi göster
+
+    btn.addEventListener("click", showImages);
+});
+</script>
+
 </section>
 
 

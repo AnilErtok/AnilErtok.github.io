@@ -1,4 +1,13 @@
+
+
+
+
+
+
+
+
 // -------------------- SMOOTH SCROLL --------------------
+
 document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', e => {
         e.preventDefault();
@@ -57,3 +66,6 @@ lightbox.addEventListener('click', (e) => {
         lightbox.style.display = 'none';
     }
 });
+
+
+
