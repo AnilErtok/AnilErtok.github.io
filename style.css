@@ -438,6 +438,14 @@ footer {
     }
 }
 
+@media (max-width: 480px) {
+    nav a {
+        font-size: 14px !important;
+        padding: 6px 10px;
+    }
+}
+
+
 @media (max-width: 768px) {
 
      .hero-content-wrapper {
