@@ -420,7 +420,7 @@ footer {
     }
 
     nav ul {
-        flex-direction: row !important;
+      
         flex-wrap: nowrap !important;
         width: auto !important;
         gap: 20px !important;
